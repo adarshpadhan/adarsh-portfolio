@@ -28,7 +28,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center space-x-4">
               <a
-                href="https://github.com/adarshkumarpadhan"
+                href="https://github.com/adarshpadhan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#2DD4BF] transition-colors"
@@ -36,7 +36,7 @@ export default function Navbar() {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com/adarshkumarpadhan"
+                href="https://instagram.com/adarshpadhan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#2DD4BF] transition-colors"
@@ -44,7 +44,7 @@ export default function Navbar() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://discord.com/users/adarshkumarpadhan"
+                href="https://discord.com/users/adarsh2006"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#2DD4BF] transition-colors"
