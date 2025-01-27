@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "next/image"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 const projects = [
   {
@@ -11,7 +12,7 @@ const projects = [
     description: "A computer networks simulation project",
     image: "/placeholder.svg?height=300&width=400",
   },
-];
+]
 
 export default function Works() {
   return (
@@ -45,8 +46,15 @@ export default function Works() {
               </div>
             ))}
           </div>
+          <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-gray-900/50 p-2 rounded-full border border-gray-800 text-[#2DD4BF] hover:bg-gray-800 transition-colors">
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-gray-900/50 p-2 rounded-full border border-gray-800 text-[#2DD4BF] hover:bg-gray-800 transition-colors">
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>
-  );
+  )
 }
+
