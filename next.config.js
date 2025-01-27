@@ -8,11 +8,11 @@ const nextConfig = {
           destination: "/:path*",
           permanent: true,
         },
-      ]
+      ];
     },
     output: "standalone", // This replaces the deprecated 'target' option
-  }
+  };
   
-  module.exports = nextConfig
+  module.exports = nextConfig;
   
   
