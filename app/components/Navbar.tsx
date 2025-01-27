@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Instagram, MessageCircle } from "lucide-react"
+import { Github, Instagram, Mail, MessageSquare } from "lucide-react"
 
 export default function Navbar() {
   return (
@@ -21,9 +21,6 @@ export default function Navbar() {
               </Link>
               <Link href="#works" className="text-gray-400 hover:text-[#2DD4BF] transition-colors">
                 Works
-              </Link>
-              <Link href="#contact" className="text-gray-400 hover:text-[#2DD4BF] transition-colors">
-                Contact
               </Link>
             </div>
             <div className="flex items-center space-x-4">
@@ -49,7 +46,10 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#2DD4BF] transition-colors"
               >
-                <MessageCircle className="h-5 w-5" />
+                <MessageSquare className="h-5 w-5" />
+              </a>
+              <a href="mailto:apadhan@outlook.in" className="text-gray-400 hover:text-[#2DD4BF] transition-colors">
+                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>

@@ -23,6 +23,7 @@ body {
 
 .glow {
   box-shadow: 0 0 20px rgba(45, 212, 191, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .glow:hover {
@@ -30,18 +31,17 @@ body {
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
     transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
   }
 }
 
 .float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 

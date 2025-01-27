@@ -25,15 +25,22 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-[#2DD4BF] mb-12">My Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section id="skills" className="relative">
+      <div className="space-y-12">
+        <div className="inline-flex items-center space-x-2 text-[#2DD4BF] bg-[#2DD4BF]/10 px-4 py-2 rounded-full">
+          <span className="w-2 h-2 bg-[#2DD4BF] rounded-full"></span>
+          <span className="text-sm font-medium">My Skills</span>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skills.map((skill, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-md">
-              <div className="mb-4">{skill.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-2">{skill.title}</h3>
-              <p className="text-gray-400">{skill.description}</p>
+            <div key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 glow">
+              <div className="flex items-center space-x-4">
+                <div className="bg-[#2DD4BF]/10 p-3 rounded-lg">{skill.icon}</div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white mb-1">{skill.title}</h3>
+                  <p className="text-gray-400 text-sm">{skill.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
