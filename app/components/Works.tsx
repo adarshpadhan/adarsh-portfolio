@@ -1,5 +1,7 @@
-import Image from "next/image"
-import { useRef, useEffect } from "react"
+"use client";
+
+import Image from "next/image";
+import { useRef, useEffect } from "react";
 
 const projects = [
   {
@@ -17,30 +19,30 @@ const projects = [
     description: "A responsive web application",
     image: "/placeholder.svg?height=300&width=400",
   },
-]
+];
 
 export default function Works() {
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
       if (scrollRef.current) {
-        e.preventDefault()
-        scrollRef.current.scrollLeft += e.deltaY
+        e.preventDefault();
+        scrollRef.current.scrollLeft += e.deltaY;
       }
-    }
+    };
 
-    const currentRef = scrollRef.current
+    const currentRef = scrollRef.current;
     if (currentRef) {
-      currentRef.addEventListener("wheel", handleWheel, { passive: false })
+      currentRef.addEventListener("wheel", handleWheel, { passive: false });
     }
 
     return () => {
       if (currentRef) {
-        currentRef.removeEventListener("wheel", handleWheel)
+        currentRef.removeEventListener("wheel", handleWheel);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   return (
     <section id="works" className="relative">
@@ -82,6 +84,5 @@ export default function Works() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
