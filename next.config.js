@@ -4,14 +4,13 @@ const nextConfig = {
     async redirects() {
       return [
         {
-          source: '/:path*/',
-          destination: '/:path*',
+          source: "/:path*/",
+          destination: "/:path*",
           permanent: true,
         },
       ]
     },
-    // Add this for Cloudflare Pages compatibility
-    target: 'experimental-serverless-trace',
+    output: "standalone", // This replaces the deprecated 'target' option
   }
   
   module.exports = nextConfig
