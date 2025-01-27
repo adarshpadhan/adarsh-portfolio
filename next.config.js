@@ -1,18 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    trailingSlash: false,
-    async redirects() {
-      return [
-        {
-          source: "/:path*/",
-          destination: "/:path*",
-          permanent: true,
-        },
-      ];
+    output: "standalone",
+    // Remove the trailingSlash and redirects configuration as they're causing the loop
+    async rewrites() {
+      return {
+        afterFiles: [
+          {
+            source: "/:path*",
+            has: [
+              {
+                type: "header",
+                key: "x-matched-path",
+              },
+            ],
+            destination: "/:path*",
+          },
+        ],
+      }
     },
-    output: "standalone", // This replaces the deprecated 'target' option
-  };
+  }
   
-  module.exports = nextConfig;
+  module.exports = nextConfig
   
   
