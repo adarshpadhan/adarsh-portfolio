@@ -67,6 +67,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#2DD4BF" />
+        <link rel="canonical" href="https://adarshkumarpadhan.vercel.app" />
       </head>
       <body className={`${inter.className} bg-[#1a1a1a] text-gray-100`}>{children}</body>
     </html>
