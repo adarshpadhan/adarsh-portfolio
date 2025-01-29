@@ -19,7 +19,7 @@ const skills = [
   {
     icon: <Server className="h-8 w-8 text-[#2DD4BF]" />,
     title: "Computer Networks",
-    description: "TCP/IP, DNS, HTTP",
+    description: "Decentralized, IP Protocols",
   },
 ]
 

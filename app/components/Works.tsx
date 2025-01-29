@@ -5,12 +5,12 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "Personal portfolio built with Next.js and Tailwind CSS",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/adarsh_portfolio.png?height=300&width=400",
   },
   {
-    title: "Network Project",
-    description: "A computer networks simulation project",
-    image: "/placeholder.svg?height=300&width=400",
+    title: "Virtual Private Cloud",
+    description: "Leaveraging AWS services to create a secure compute environment",
+    image: "/AWS.png?height=300&width=400",
   },
 ]
 
