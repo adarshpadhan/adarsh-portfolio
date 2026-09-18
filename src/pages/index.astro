@@ -1,0 +1,141 @@
+---
+import '../styles/site.css'
+
+const github = 'https://github.com/adarshpadhan'
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'AWS', 'Git']
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#090909" />
+    <meta name="description" content="Portfolio of Adarsh Kumar Padhan, a web developer building fast, accessible and thoughtful web experiences." />
+    <meta name="keywords" content="web developer, computer networks, portfolio, Adarsh Kumar Padhan" />
+    <link rel="canonical" href="https://adarsh.runloop.in/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://adarsh.runloop.in/" />
+    <meta property="og:title" content="Adarsh Kumar Padhan - Developer Portfolio" />
+    <meta property="og:description" content="A web developer building fast, accessible and thoughtful web experiences." />
+    <meta property="og:image" content="https://adarsh.runloop.in/adarsh_portfolio.png" />
+    <meta property="og:site_name" content="Adarsh Kumar Padhan Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Adarsh Kumar Padhan - Developer Portfolio" />
+    <meta name="twitter:description" content="A web developer building fast, accessible and thoughtful web experiences." />
+    <meta name="twitter:image" content="https://adarsh.runloop.in/adarsh_portfolio.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: 'Adarsh Kumar Padhan',
+      url: 'https://adarsh.runloop.in/',
+      jobTitle: 'Web Developer',
+      sameAs: [github],
+    })} />
+    <title>Adarsh Kumar Padhan - Developer Portfolio</title>
+  </head>
+  <body>
+    <main id="top">
+      <header class="site-header">
+        <a href="#top" class="brand" aria-label="Adarsh home">adarsh<span>.</span></a>
+        <nav class="nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#github">projects</a>
+          <a href="#about">about</a>
+          <a href={github} target="_blank" rel="noreferrer">github</a>
+        </nav>
+        <button class="menu-button" id="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span class="menu-icon" aria-hidden="true">+</span>
+        </button>
+      </header>
+
+      <section class="hero section-grid">
+        <div class="hero-copy reveal">
+          <p class="index">01 <i></i> INTRODUCTION</p>
+          <h1>Building useful<br />things for the web<span>.</span></h1>
+          <p class="lede">Hi, I’m Adarsh Kumar Padhan — a web developer interested in fast, accessible and delightful web experiences.</p>
+          <a class="text-link" href="#github">Explore projects <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="orbital-art" aria-hidden="true">
+          <div class="orb"><div></div><div></div><div></div></div>
+          <b class="cross cross-one">+</b>
+          <b class="cross cross-two">+</b>
+        </div>
+        <div class="hero-foot"><span>01</span><i></i><span>IDEAS / CODE / IMPACT</span></div>
+      </section>
+
+      <section id="github" class="github-section section-grid">
+        <div class="section-intro reveal">
+          <p class="index">02 <i></i> GITHUB</p>
+          <h2>Top projects<br />on <em>GitHub.</em></h2>
+          <p>My six most-starred public repositories, updated directly from my GitHub profile.</p>
+          <a class="text-link" href={github} target="_blank" rel="noreferrer">Visit my GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="repo-list reveal" id="repo-list" aria-live="polite">
+          <div class="repo-loading"><span class="spinner" aria-hidden="true"></span>Loading public projects from GitHub…</div>
+        </div>
+      </section>
+
+      <section id="about" class="about section-grid">
+        <div class="section-intro reveal">
+          <p class="index">03 <i></i> ABOUT</p>
+          <h2>A little bit<br /><em>about me.</em></h2>
+          <p>I’m Adarsh Kumar Padhan, a web developer who enjoys building clear, thoughtful and user-focused experiences.</p>
+        </div>
+        <div class="about-copy reveal">
+          <p>I care about clean code, good design and building things that are actually useful. I’m constantly learning, experimenting and looking for better ways to create for the web.</p>
+          <p>When I’m not coding, you’ll probably find me reading, exploring new tools or thinking about what to build next.</p>
+        </div>
+        <div class="skills reveal">
+          <h3>Skills</h3>
+          {skills.map((skill) => <span>{skill}</span>)}
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a class="brand" href="#top">adarsh<span>.</span></a>
+        <p>Adarsh Kumar Padhan<br />Web Developer</p>
+        <div><small>LET’S BUILD SOMETHING USEFUL.</small><a href="mailto:apadhan@outlook.in">apadhan@outlook.in</a></div>
+        <nav><a href="#github">projects</a><a href="#about">about</a><a href={github}>github</a></nav>
+        <p class="copyright">© {new Date().getFullYear()} Adarsh Kumar Padhan. All rights reserved.</p>
+      </footer>
+    </main>
+
+    <script>
+      const menuButton = document.querySelector('#menu-button')
+      const nav = document.querySelector('#site-nav')
+      menuButton?.addEventListener('click', () => {
+        const open = nav?.classList.toggle('open') ?? false
+        menuButton.setAttribute('aria-expanded', String(open))
+        menuButton.querySelector('.menu-icon').textContent = open ? '×' : '+'
+      })
+      nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        nav.classList.remove('open')
+        menuButton?.setAttribute('aria-expanded', 'false')
+        const icon = menuButton?.querySelector('.menu-icon')
+        if (icon) icon.textContent = '+'
+      }))
+
+      const repoList = document.querySelector('#repo-list')
+      const githubIcon = '<span class="repo-icon" aria-hidden="true">↗</span>'
+      fetch('https://api.github.com/users/adarshpadhan/repos?sort=updated&per_page=100')
+        .then((response) => response.ok ? response.json() : [])
+        .then((repositories) => repositories
+          .filter((repo) => !repo.fork && repo.name.toLowerCase() !== 'adarshpadhan')
+          .sort((a, b) => b.stargazers_count - a.stargazers_count)
+          .slice(0, 6))
+        .then((repositories) => {
+          if (!repoList) return
+          if (!repositories.length) {
+            repoList.innerHTML = '<div class="repo-loading">GitHub projects are temporarily unavailable.</div>'
+            return
+          }
+          repoList.innerHTML = repositories.map((repo) => `<a class="repo" href="${repo.html_url}" target="_blank" rel="noreferrer"><div><h3>${repo.name}</h3><p>${repo.description || 'An open-source project by Adarsh Kumar Padhan.'}</p></div><span class="language">${repo.language || 'Code'}</span><span class="stars">★ ${repo.stargazers_count}</span>${githubIcon}</a>`).join('')
+        })
+        .catch(() => {
+          if (repoList) repoList.innerHTML = '<div class="repo-loading">GitHub projects are temporarily unavailable.</div>'
+        })
+    </script>
+  </body>
+</html>

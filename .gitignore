@@ -3,9 +3,12 @@
 # dependencies
 /node_modules
 
-# next.js
+# framework output
 /.next/
 /out/
+/.astro/
+/dist/
+/.wrangler/
 
 # production
 /build

@@ -1,10 +1,9 @@
 # Adarsh Kumar Padhan — Developer Portfolio
 
-<p align="center"><strong>A modern personal portfolio built with Next.js, React, TypeScript, and Tailwind CSS.</strong></p>
+<p align="center"><strong>A modern personal portfolio built with Astro and TypeScript.</strong></p>
 
-![Next.js](https://img.shields.io/badge/Next.js-14-000000?logo=next.js&logoColor=white)
+![Astro](https://img.shields.io/badge/Astro-5-FF5D01?logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
 
 ## About
 
@@ -23,7 +22,17 @@ Open [http://localhost:3000](http://localhost:3000) in a browser.
 
 ```bash
 npm run build
-npm start
+npm run preview
 ```
 
-Live site: [adarshkumarpadhan.vercel.app](https://adarshkumarpadhan.vercel.app)
+## Cloudflare Pages
+
+This site uses Astro's Cloudflare adapter for server-side rendering. Deploy it as a Cloudflare Worker:
+
+```bash
+npm run deploy
+```
+
+The generated Worker config is `dist/server/wrangler.json`.
+
+Live site: [adarsh.runloop.in](https://adarsh.runloop.in)
