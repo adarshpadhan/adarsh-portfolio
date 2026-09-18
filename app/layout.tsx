@@ -1,8 +1,5 @@
 import "./globals.css"
-import { Inter } from "next/font/google"
 import type { Metadata } from "next"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Adarsh Kumar Padhan - Developer Portfolio",
@@ -68,8 +65,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#2DD4BF" />
       </head>
-      <body className={`${inter.className} bg-[#1a1a1a] text-gray-100`}>{children}</body>
+      <body className="bg-[#1a1a1a] text-gray-100">{children}</body>
     </html>
   )
 }
-
