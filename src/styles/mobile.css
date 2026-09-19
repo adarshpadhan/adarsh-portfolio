@@ -1,0 +1,79 @@
+@media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .section-grid {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .site-header {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .nav.open {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .hero {
+    min-height: 650px;
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: clamp(42px, 13vw, 70px);
+    letter-spacing: -0.055em;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .lede {
+    max-width: 290px;
+  }
+
+  .orbital-art {
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .orb {
+    width: min(88vw, 360px);
+    left: 6%;
+  }
+
+  .orbital-art::after {
+    width: 125vw;
+  }
+
+  .hero-foot {
+    left: 17px;
+    right: 17px;
+  }
+
+  .hero-foot i {
+    width: 56px;
+  }
+
+  .section-intro h2 {
+    font-size: clamp(38px, 11vw, 60px);
+  }
+
+  .repo p {
+    max-width: calc(100vw - 70px);
+  }
+
+  .footer {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .copyright {
+    left: 17px;
+  }
+}
